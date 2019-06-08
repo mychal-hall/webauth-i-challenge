@@ -1,8 +1,11 @@
 const express = require("express");
 const helmet = require("helmet");
 const morgan = require("morgan");
+const session = require("express-session");
+const SessionStore = require("connect-session-knex")
 
-// Router goes here
+
+// Routers go here
 const userRouter = require("./users/user-router.js");
 
 const server = express();
