@@ -6,6 +6,7 @@ const SessionStore = require("connect-session-knex");
 
 // Routers go here
 const userRouter = require("./users/user-router.js");
+const authRouter = require("./auth/auth-router.js");
 
 const server = express();
 
@@ -35,6 +36,7 @@ server.use(morgan("tiny"));
 
 // Router paths
 server.use("/api/", userRouter);
+server.use("/api/auth", authRouter);
 
 // trash online test
 server.get("/", (req, res) => {
